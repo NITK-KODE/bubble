@@ -1,0 +1,28 @@
+<div class="person-card">
+    <div class="card_header" style="background-image: url(<%=obj.image_url%>);">
+    </div>
+
+    <div class="card_body">
+
+        <h3 class="person_name"><%=obj.name%></h3>
+        <p class="person_work"><%=obj.work%></p>
+        <div class="person_social">
+            
+            <%=link_to "Let's Go" , sign_in_page_path(id:obj.id) %>
+            
+
+            <div class="social_icons">
+                <%= link_to '<i class="bi bi-whatsapp"></i>'.html_safe , obj.whatsapp ,class:"social_icon" ,  target:"_blank"%>
+                <%= link_to '<i class="bi bi-github"></i>'.html_safe , obj.github ,class:"social_icon" , target:"_blank"%>
+                <%= link_to '<i class="bi bi-instagram"></i>'.html_safe , obj.instagram  , class:"social_icon", target:"_blank"%>
+                
+                               
+            
+            </div>
+            </div>
+
+
+
+
+    </div>
+</div>

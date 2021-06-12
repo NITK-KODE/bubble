@@ -1,0 +1,30 @@
+
+
+<div class="login-form">
+
+    <div class="wrapper">
+
+        <h1 class="dipsplay-4 heading">Enter PIN ***</h1>
+
+
+        <%= form_with url: sign_in_path do |form|%>
+    
+        <div class="input-group">
+            <div class="form_input">
+                <%= form.password_field :password , class:"pin_input" %>
+        
+            </div>
+        
+            <div >
+            <%=form.hidden_field :id , value:@user_id%>
+                <%= form.submit class: 'btn btn-default' %>
+            </div>
+        
+        </div>
+       
+      
+    
+                <%end%>
+    </div>
+
+</div>

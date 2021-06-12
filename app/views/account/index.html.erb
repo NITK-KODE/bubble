@@ -1,0 +1,38 @@
+<div class="header">
+    <div class="wrapper">
+        <h1 class="dipsplay-4 heading">Dashboard</h1>
+        <h2 class="subheading">Track <span class="website">Projects</span></h2>
+        <hr/>
+        <p>So how is it going <span class="member_name"><%=Current.member.name%></span>?</p>
+        <hr/>
+
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="wrapper">
+        <div class="welcome_message">
+         </div>
+         <div class="projects">
+             <%@project.each do |project| %>
+             
+          <%=link_to project_path(project) do%>
+             <%= render "shared/project_card" , obj:project%>
+          <%end%>
+             <%end%>
+         </div>
+         <div class="add_project">
+            <i class="bi bi-plus-circle-fill"></i>
+         </div>
+         <!-- <div class="current_project">
+             <h1>
+             On Going Project
+
+             </h1 >
+             <h1 class="project_name">IRIS management</h1>
+         </div> -->
+
+
+    </div>
+   
+</div>

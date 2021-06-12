@@ -1,0 +1,16 @@
+<div class="header">
+    <div class="wrapper">
+        <h1 class="dipsplay-4 heading">Bubble</h1>
+        <h2 class="subheading">management <span class="website">website</span></h2>
+    </div>
+</div>
+
+<div class="main_content">
+    <div class="wrapper">
+        <%@members.each do |member| %>
+        <%=render "shared/person_card" , obj:member%>
+
+        <%end%>
+
+    </div>
+</div>

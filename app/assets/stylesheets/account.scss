@@ -1,0 +1,49 @@
+// Place all the styles related to the account controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.dashboard{
+    width: 60vw;
+    margin: auto;
+}
+
+
+
+.member_name{
+    font-weight: 700;
+}
+
+.add_project{
+    position:fixed;
+    bottom: 20px;
+    right:50%;
+    font-size: 72px;
+    z-index:10;
+
+    
+}
+
+.current_project{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.current_project h1.project_name{
+    font-weight: 300;
+    
+  
+}
+
+
+// projects CSS starts here 
+.project{
+    margin: 15px 0px;
+    color:#212529;
+}
+
+.project:hover{
+    background-color: #212529;
+    color:white;
+}
+
+// projects CSS ends here
