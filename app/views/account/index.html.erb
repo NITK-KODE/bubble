@@ -1,10 +1,13 @@
+
 <div class="header">
     <div class="wrapper">
         <h1 class="dipsplay-4 heading">Dashboard</h1>
         <h2 class="subheading">Track <span class="website">Projects</span></h2>
         <hr/>
-        <p>So how is it going <span class="member_name"><%=Current.member.name%></span>?</p>
+        <p >So how is it going <span class="member_name"><%=Current.member.name%></span>?</p>
+        <%=link_to "AJAX" , test_me_path , remote:true%>
         <hr/>
+
 
     </div>
 </div>
@@ -36,3 +39,4 @@
     </div>
    
 </div>
+<%=javascript_pack_tag "test"%>
