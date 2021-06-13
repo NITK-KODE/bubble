@@ -1,16 +1,5 @@
-// Place all the styles related to the projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
-.project_content{
+h1.project_name{
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
 }
-.project_content .wrapper{ 
-    gap:20px;
-    display:grid; grid-template-columns: repeat(auto-fit , minmax(100px, 1fr)); }
- .project_tile{ height:50vh; display:flex; justify-content: center; align-items: center; background-color: black; } 
- .project_tile__body{ }
- i.tile_icon{ font-size: 50px; color:white; }
-
- .project_tile:active6 , .project_tile:hover{
-     background-color:chartreuse
- }
