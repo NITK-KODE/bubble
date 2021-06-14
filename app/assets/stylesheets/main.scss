@@ -96,3 +96,14 @@ span.website{
     color:black;
 }
 //Card CSS ends
+
+
+@media(max-width: 768px){
+    .header .wrapper{
+        width:80vw;
+        }
+        .main_content{
+            width:80vw;
+          
+        }
+}

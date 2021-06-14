@@ -38,16 +38,23 @@ overflow:auto;
     outline:none;
     border:none;
     width:100%;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--dark);
 }
 
 .submit_control{
     outline:none;
     border-radius: 2px;
-    border: 2px solid black;
+    border: none;
     background-color:transparent !important;
+    font-weight: 700;
+    color: black;
 
 
+}
+
+.submit_control:disabled{
+    color: black;
+    opacity: 0.7;
 }
 
 
@@ -74,7 +81,7 @@ overflow:auto;
 
 .message_sender p , .message_body p{
     margin: 0;
-    color: black;
+    color: var(--dark);
 }
 
 .message_sender p{
@@ -89,4 +96,10 @@ overflow:auto;
 font-weight: 300;
 
 
+}
+
+@media(max-width: 768px){
+    .chat_room .wrapper{
+        width:80vw;
+    }
 }
