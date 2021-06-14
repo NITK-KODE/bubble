@@ -4,7 +4,14 @@
         <h1 class="dipsplay-4 heading">Dashboard</h1>
         <h2 class="subheading">Track <span class="website">Projects</span></h2>
         <hr/>
-        <p >So how is it going <span class="member_name"><%=Current.member.name%></span>?</p>
+        <div class="option_menu">
+            <div class="welcome">
+                <p>So how is it going <span class="member_name"><%=Current.member.name%></span>?</p>
+            </div>
+<div class="gear_icon">
+    <%=link_to '<i class="bi bi-pin-fill"></i>'.html_safe , pinchange_path %> 
+    </div>            
+        </div>
         <hr/>
 
 

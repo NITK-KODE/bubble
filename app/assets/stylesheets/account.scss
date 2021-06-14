@@ -49,6 +49,44 @@
 // projects CSS ends here
 
 
+.option_menu{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+}
+
+i.bi-pin-fill{
+ color:#dc3545;
+font-size: 18px;
+
+
+}
+
+.gear_icon {
+    padding-right: 10px;
+animation-name: rotate;
+animation-timing-function: ease;
+animation-duration: 2s;
+animation-direction: alternate;
+animation-iteration-count: infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(-60deg)
+    }
+    100%{
+        transform: rotate(60deg)
+    }
+}
+
+.welcome p {
+    margin-bottom:0px;
+}
+
 @media(max-width:768px){
     .dashboard{
         width: 80vw;

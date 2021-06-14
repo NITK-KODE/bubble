@@ -1,0 +1,44 @@
+
+
+<div class="login-form">
+
+    <div class="wrapper">
+
+
+
+        <%= form_with url: pinchange_path do |form|%>
+    
+        <div class="input-group">
+            <div class="form_input">
+          <h1 class="dipsplay-4 heading">old PIN</h1>
+
+                <%= form.password_field :oldpin , class:"pin_input" %>
+        
+            </div>
+               <hr/>
+            <div class="form_input">
+                <h1 class="dipsplay-4 heading">new PIN</h1>
+      
+                      <%= form.password_field :newpin , class:"pin_input" %>
+              
+                  </div>
+        
+            <div >
+
+                <div class="form_input">
+                    <h1 class="dipsplay-4 heading">new PIN</h1>
+          
+                          <%= form.password_field :newpinconfirmation , class:"pin_input" %>
+                  
+                      </div>
+                <%= form.submit "Change" ,class: 'btn btn-default form_submit form_s' %>
+            </div>
+        
+        </div>
+       
+      
+    
+                <%end%>
+    </div>
+
+</div>
