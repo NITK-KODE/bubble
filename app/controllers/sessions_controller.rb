@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
             cookies.encrypted[:user] = member.id
             redirect_to account_path
         else
+            flash[:notice] = "Please enter correct PIN"
             redirect_to root_path
         end
     end
