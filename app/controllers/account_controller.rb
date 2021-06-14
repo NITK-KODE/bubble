@@ -9,10 +9,6 @@ class AccountController < ApplicationController
         end
     end
 
-    def test
-        @member = Member.all
-        
-    end
 
 
     private 

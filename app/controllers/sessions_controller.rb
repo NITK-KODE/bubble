@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
         member = Member.find_by(id:params[:id])
         if member.present? && member.authenticate(params[:password])
             session[:user] = member.id
+            cookies.encrypted[:user] = member.id
             redirect_to account_path
         else
             redirect_to root_path

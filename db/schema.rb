@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_200651) do
+ActiveRecord::Schema.define(version: 2021_06_13_221159) do
+
+  create_table "charoom_users", force: :cascade do |t|
+    t.integer "chatroom_id", null: false
+    t.integer "member_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_charoom_users_on_chatroom_id"
+    t.index ["member_id"], name: "index_charoom_users_on_member_id"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "chatroom_users", force: :cascade do |t|
+    t.integer "chatroom_id", null: false
+    t.integer "member_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_chatroom_users_on_chatroom_id"
+    t.index ["member_id"], name: "index_chatroom_users_on_member_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string "name", null: false
@@ -26,10 +56,23 @@ ActiveRecord::Schema.define(version: 2021_06_12_200651) do
     t.boolean "registered", default: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "member_id", null: false
+    t.string "body", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["member_id"], name: "index_messages_on_member_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "charoom_users", "chatrooms"
+  add_foreign_key "charoom_users", "members"
+  add_foreign_key "chatroom_users", "chatrooms"
+  add_foreign_key "chatroom_users", "members"
+  add_foreign_key "messages", "members"
 end

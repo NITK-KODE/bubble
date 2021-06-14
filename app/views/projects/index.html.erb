@@ -2,9 +2,54 @@
 <div class="project_content">
     <div class="wrapper">
       
-       <h1 class="project_name">
-           <%=@project.name%>
-       </h1>
+    <div class="project_name">
+        <h1 class="project_name">
+            <%=@project.name%>
+        </h1> 
+    </div>
+
+    <div class="chat_room">
+
+    <div class="wrapper">
+        <div class="chatroom">
+
+            <%@messages.each do |message|%>
+
+            <div class="message_box">
+                <div class="message_wrapper">
+                    <div class="message_sender">
+                        <p><%=message.member.name%></p> 
+     
+                     </div>
+                     <div class="message_body">
+                         <p>
+                             <%=message.body%>
+                             <br/>
+                             <%= distance_of_time_in_words Time.now , message.created_at%> ago
+                         </p>
+                     </div>
+                </div>
+               
+            </div>
+            <%end%>
+        </div>
+        <div class="chat_controls">
+            <%= form_with model:@message  , url: "/message" , local: false , class:"form_control" do |form| %>
+            <div class="control_group">
+                <%=form.text_field :body , class:"body_control"%>
+                <%=form.submit "Send" , class:"bg-transparent submit_control"%>
+            </div> 
+            <%end%>
+            
+        </div>
+    </div>
+       
 
     </div>
+  
+       
+    </div>
 </div>
+
+
+<%= javascript_pack_tag "message" %>

@@ -2,4 +2,91 @@ h1.project_name{
     text-align: center;
     font-weight: 700;
     font-family: 'Roboto', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.chat_room{
+    font-family: 'Roboto', sans-serif;
+}
+.chat_room .wrapper{
+    margin: auto;
+    width:60vw;
+}
+.chatroom{
+border-radius: 10px;
+height: 50vh;
+
+color:white;
+padding: 20px;
+background-color:var(--dark);
+overflow:auto;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.control_group{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-top: 10px;
+}
+
+.body_control{
+    outline:none;
+    border:none;
+    width:100%;
+    border-bottom: 2px solid black;
+}
+
+.submit_control{
+    outline:none;
+    border-radius: 2px;
+    border: 2px solid black;
+    background-color:transparent !important;
+
+
+}
+
+
+.message_box{
+    margin: 10px 0px;
+
+
+}
+
+.message_wrapper{
+    display:inline-block;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color:chartreuse;
+
+}
+
+.messsage_sender{
+ font-weight: 700;
+ padding:5px;
+ color:black;
+ 
+}
+
+.message_sender p , .message_body p{
+    margin: 0;
+    color: black;
+}
+
+.message_sender p{
+    font-weight: 700;
+}
+
+.message_body p{
+    font-weight: 300;
+}
+
+.message_body{
+font-weight: 300;
+
+
 }
