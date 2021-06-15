@@ -36,6 +36,8 @@
 
 
 // projects CSS starts here 
+
+
 .project{
     margin: 15px 0px;
     color:#212529;
@@ -47,7 +49,27 @@
 }
 
 // projects CSS ends here
+.splide__arrow{
+    background-color:chartreuse;
+    padding: 5px;
+    border-radius: 100px;
+    top:50%;
+}
+.splide__arrow svg:hover{
+    fill:black;
+    
+}
+.splide__pagination__page.is-active{
+    background: chartreuse;
+}
 
+.splide{
+    }
+
+.splide__arrow svg{
+    fill:var(--dark);
+    width: 20px;
+}
 
 .option_menu{
     display:flex;
@@ -55,6 +77,8 @@
     justify-content:space-between;
 
 }
+
+
 
 i.bi-pin-fill{
  color:#dc3545;
@@ -88,8 +112,12 @@ animation-iteration-count: infinite;
 }
 
 @media(max-width:768px){
+
+    .splide{
+        }
+
     .dashboard{
-        width: 80vw;
+        width: 100vw;
     }
     
     

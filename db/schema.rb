@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_13_221159) do
+ActiveRecord::Schema.define(version: 2021_06_14_210533) do
 
   create_table "charoom_users", force: :cascade do |t|
     t.integer "chatroom_id", null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_06_13_221159) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "project_type", default: 0
   end
 
   add_foreign_key "charoom_users", "chatrooms"

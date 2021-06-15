@@ -1,10 +1,43 @@
-h1.project_name{
-    text-align: center;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-    padding-top: 50px;
-    padding-bottom: 10px;
+// CSS FOR PROJECT_CARD ENDS HERE
+
+
+
+.project_card{
+    padding: 10px;
+    border:2px solid black;
+    border-radius: 2px;
+    
 }
+
+.project_card .wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.project_card .wrapper .main{
+    
+}
+
+.project_card .wrapper .main .title{
+    font-weight: 300;
+    
+}
+
+.project_card .wrapper .participant{
+    
+}
+
+.project_card .wrapper .options{
+    
+}
+
+
+
+// CSS FOR PROJECT_CARD ENDS HERE
+
+
+
 
 .chat_room{
     font-family: 'Roboto', sans-serif;
