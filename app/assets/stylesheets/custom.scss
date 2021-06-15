@@ -1,1 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+.centre_card{
+    display:flex;
+    justify-content: center;
+}
+
+.centre_card .wrapper{
+    width:60vw;
+
+}
+
+
+.content_wrapper{
+    padding:10px;
+    border-radius: 2px;
+    border:2px solid var(--dark);
+}
+
+.content_wrapper .wrapper{
+   
+}

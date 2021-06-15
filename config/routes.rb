@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   post "/account/login/" , to: "sessions#create" , as:"sign_in"
   get "/settings" , to: "account#setting" , as: "pinchange"
   post "/settings" , to: "account#pinchange" , as: "pinupdate"
+  get "/project/new" , to: "projects#new" , as: "new_project"
+  delete "/project/:id/" , to: "projects#destroy" , as: "project_destroy"
+
+  post "/project/new" , to: "projects#create" , as: "projects"
 
   post "/message/" , to:"message#create" , as:"message"
   get "/account/" , to:"account#index" , as:"account"
