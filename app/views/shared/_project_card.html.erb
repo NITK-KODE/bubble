@@ -1,23 +1,27 @@
 <div class="project_card">
     <div class="wrapper">
         <div class="main">
+            <%=link_to project_path(obj) do%>
+
             <div class="title">
                 <h3 class="project_name"><%=obj.name%></h3>
 
             </div>
+            <%end%>
             <div class="participant">
-               Danish Anuran Anas
+                <% obj.members.each do |member| %>
+                <%=member.name%>
+                <%end%>
             </div>
         </div>
         <div class="options">
+            <%=link_to project_path(obj) , method: :delete do%>
+
             <div class="option"><i class="bi bi-trash-fill"></i></div>
+            <%end%>
             <div class="option"><i class="bi bi-check-circle-fill"></i></div>
             <div class="option">Start</div>
 
         </div>
     </div>
 </div>
-
-
-
-

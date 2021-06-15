@@ -1,0 +1,35 @@
+<%= render layout:"shared/centre_card" do %>
+  <div class="project_new_wrapper">
+    <div class="header">
+        <div class="wrapper">
+            <h1 class="dipsplay-4 heading">Create Project</h1>
+            <h2 class="subheading">New project <span class="website">bubble</span></h2>
+        </div>
+    </div>
+
+    <%=render layout:"shared/content_wrapper" do%>
+        <%=form_with model:@project do |form|%>
+          <%=form.text_field :name%>
+
+          <% @members.each do |member| %>
+          <%= form.check_box :member_ids , { multiple: true } , member.id  , false%>
+
+          <%end%>
+          <%= form.radio_button :project_type, 0 %>
+          <%= form.radio_button :project_type, 1 %>
+          <%= form.radio_button :project_type, 2 %>
+          <%= form.date_select :deadline%>
+
+         
+
+          <%= form.submit "Add"%>
+        <%end%>
+    <%end%>
+
+
+  </div>
+
+
+  <%end%>
+
+
