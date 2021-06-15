@@ -18,4 +18,7 @@ end
     projects[project_type] == :completed
 end
  
+def self.get_project_types
+    projects = [:future , :ongoing , :completed]
+end
 end
