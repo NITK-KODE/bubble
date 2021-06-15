@@ -9,20 +9,49 @@
 
     <%=render layout:"shared/content_wrapper" do%>
         <%=form_with model:@project do |form|%>
-          <%=form.text_field :name%>
 
-          <% @members.each do |member| %>
-          <%= form.check_box :member_ids , { multiple: true } , member.id  , false%>
+          <%=form.label :name%>
+          <%=form.text_field :name , class:"primary_input" , autocomplete:"off"%>
 
-          <%end%>
-          <%= form.radio_button :project_type, 0 %>
-          <%= form.radio_button :project_type, 1 %>
-          <%= form.radio_button :project_type, 2 %>
-          <%= form.date_select :deadline%>
+          <br/>
+          <div class="checkbox-group">
+            <div class="members_checkboxes">
+                <% @members.each do |member| %>
+                <div class="checkbox">
+                    <label>
+                        <%= form.check_box :member_ids , { multiple: true } , member.id  , false%>
+                        <%=member.name%>
+                    </label>
+            
+                </div>
+            
+                
+                <%end%>
+              </div>
+          </div>
+         
+          <br/>
+
+
+          <div class="radio_group">
+            <%0.upto(2) do |index|%>
+            <%= form.radio_button :project_type, index %>
+            <%=form.label Project.get_project_types()[index]%>
+  
+            <%end%>
+          </div>
+       
+          <br/>
+       <div class="deadline_picker">
+        <%=form.label :deadline%>
+        <%= form.date_select :deadline%>
+       </div>
+    
+          <br/>
 
          
 
-          <%= form.submit "Add"%>
+          <%= form.submit "Add" , class:"primary_button" %>
         <%end%>
     <%end%>
 

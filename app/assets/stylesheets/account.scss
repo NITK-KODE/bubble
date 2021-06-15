@@ -79,6 +79,18 @@
 }
 
 
+.add_project_button{
+    display:flex;
+    justify-content: center;
+    font-weight: 300;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+    padding: 20px;
+    border-radius: 2px;
+    background-color: chartreuse;
+}
+
+
 
 i.bi-pin-fill{
  color:#dc3545;
