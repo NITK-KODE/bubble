@@ -1,18 +1,19 @@
-
 <div class="header">
     <div class="wrapper">
         <h1 class="dipsplay-4 heading">Dashboard</h1>
         <h2 class="subheading">Track <span class="website">Projects</span></h2>
-        <hr/>
+        <hr />
         <div class="option_menu">
             <div class="welcome">
-                <p>So how is it going <span class="member_name"><%=Current.member.name%></span>?</p>
+                <p>So how is it going <span class="member_name">
+                        <%=Current.member.name%>
+                    </span>?</p>
             </div>
-<div class="gear_icon">
-    <%=link_to '<i class="bi bi-pin-fill"></i>'.html_safe , pinchange_path %> 
-    </div>            
+            <div class="gear_icon">
+                <%=link_to '<i class="bi bi-pin-fill"></i>' .html_safe , pinchange_path %>
+            </div>
         </div>
-        <hr/>
+        <hr />
 
 
     </div>
@@ -21,58 +22,62 @@
 <div class="dashboard">
     <div class="wrapper">
         <div class="add_project_button">
-        <%=link_to "Add project" , new_project_path %>
-         </div>
-         <h3 id="project_type">
+            <%=link_to "Add project" , new_project_path %>
+        </div>
+        <h3 id="project_type">
             Future Projects
-         </h1>
-         <div class="projects">
-            <div class="splide" data-splide='{"height":"80vh" , "perpage":"1"}'>
-                <div class="splide__track">
-                    <ul class="splide__list">
-                         
-                        <li class="splide__slide">
+            </h1>
+            <div class="projects">
+                <div class="splide" data-splide='{"height":"80vh" , "perpage":"1"}'>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+
+                            <li class="splide__slide">
                                 <%@project.each do |project| %>
-             
-                                <% if project.completed? %>
-    
-                                   <%= render("shared/project_card" , obj:project)%>
-                                <%end%>
-    
-                                   <%end%>
-                          
-                        </li>
-                        <li class="splide__slide">
-                            <%@project.each do |project| %>
-             
-                            <% if project.ongoing? %>
 
-                               <%= render("shared/project_card" , obj:project)%>
-                            <%end%>
+                                    <% if project.completed? %>
 
-                               <%end%>
-                        </li>
+                                        <%= render("shared/project_card" , obj:project)%>
+                                            <%end%>
 
-                         <li class="splide__slide">
-                            <%@project.each do |project| %>
-             
-                            <% if project.future? %>
+                                                <%end%>
+                                              
+                                            </li>
+                            <li class="splide__slide">
+                                <%@project.each do |project| %>
 
-                               <%= render("shared/project_card" , obj:project)%>
-                            <%end%>
+                                    <% if project.ongoing? %>
 
-                               <%end%>
-                        </li>
-                  
-                    </ul>
+                                        <%= render("shared/project_card" , obj:project)%>
+                                            <%end%>
+
+                                                <%end%>
+
+
+                            </li>
+
+                            <li class="splide__slide">
+                                <%@project.each do |project| %>
+
+                                    <% if project.future? %>
+
+                                        <%= render("shared/project_card" , obj:project)%>
+                                            <%end%>
+
+                                                <%end%>
+                                        
+
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
+
             </div>
-            
-         </div>
-         <!-- <div class="add_project">
+            <!-- <div class="add_project">
             <i class="bi bi-plus-circle-fill"></i>
          </div> -->
-         <!-- <div class="current_project">
+            <!-- <div class="current_project">
              <h1>
              On Going Project
 
@@ -82,9 +87,9 @@
 
 
     </div>
-   
+
 </div>
 
 
 
-<%=javascript_pack_tag "test"%>
+<%=javascript_pack_tag "test" %>
