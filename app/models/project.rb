@@ -1,7 +1,8 @@
 class Project < ApplicationRecord
     has_many :project_members , dependent: :destroy
     has_many :members , through: :project_members
-
+    has_many :project_message , dependent: :destroy
+    has_many :messages , through: :project_message
     
 def future?()
     projects = [:future , :ongoing , :completed]

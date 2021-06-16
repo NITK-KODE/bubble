@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   delete "/project/:id/" , to: "projects#destroy" , as: "project_destroy"
 
   post "/project/new" , to: "projects#create" , as: "projects"
-
-  post "/message/" , to:"message#create" , as:"message"
+  
+  post "/project/:id/message/" , to:"message#create" , as:"message"
   get "/account/" , to:"account#index" , as:"account"
   get "/project/:id" , to:"projects#index" , as:"project"
 end

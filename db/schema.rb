@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_190313) do
+ActiveRecord::Schema.define(version: 2021_06_16_164737) do
 
   create_table "charoom_users", force: :cascade do |t|
     t.integer "chatroom_id", null: false
@@ -73,6 +73,15 @@ ActiveRecord::Schema.define(version: 2021_06_15_190313) do
     t.index ["project_id"], name: "index_project_members_on_project_id"
   end
 
+  create_table "project_messages", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "message_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_id"], name: "index_project_messages_on_message_id"
+    t.index ["project_id"], name: "index_project_messages_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -88,4 +97,6 @@ ActiveRecord::Schema.define(version: 2021_06_15_190313) do
   add_foreign_key "messages", "members"
   add_foreign_key "project_members", "members"
   add_foreign_key "project_members", "projects"
+  add_foreign_key "project_messages", "messages"
+  add_foreign_key "project_messages", "projects"
 end

@@ -2,12 +2,14 @@ class ProjectsController < ApplicationController
     def index
         @project = Project.find(params[:id])
         @message = Message.new
-        @messages = Message.all
+        @messages = @project.messages
+        cookies[:project] = @project.id
     end
 
     def new 
         @members = Member.all
         @project = Project.new
+
     end
 
     def create

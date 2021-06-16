@@ -1,9 +1,33 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create({channel:"ChatChannel" ,  room:"main" } , {
+
+  function getcookie(name = '') {
+    let cookies = document.cookie;
+    let cookiestore = {};
+    
+    cookies = cookies.split(";");
+    
+    if (cookies[0] == "" && cookies[0][0] == undefined) {
+        return undefined;
+    }
+    
+    cookies.forEach(function(cookie) {
+        cookie = cookie.split(/=(.+)/);
+        if (cookie[0].substr(0, 1) == ' ') {
+            cookie[0] = cookie[0].substr(1);
+        }
+        cookiestore[cookie[0]] = cookie[1];
+    });
+    
+    return (name !== '' ? cookiestore[name] : cookiestore);
+}
+
+
+
+consumer.subscriptions.create({channel:"ChatChannel" ,  id:getcookie('project') } , {
   connected() {
     // Called when the subscription is ready for use on the server
-    console.log("conncted");
+
   },
 
   disconnected() {

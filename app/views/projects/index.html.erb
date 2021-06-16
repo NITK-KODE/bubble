@@ -34,7 +34,7 @@
             <%end%>
         </div>
         <div class="chat_controls">
-            <%= form_with model:@message  , url: "/message" , local: false , class:"form_control" do |form| %>
+            <%= form_with model:@message  , url: message_path , local: false , class:"form_control" do |form| %>
             <div class="control_group">
                 <%=form.text_field :body , class:"body_control"%>
                 <%=form.submit "Send" , class:"bg-transparent submit_control"%>
