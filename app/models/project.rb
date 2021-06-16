@@ -3,7 +3,13 @@ class Project < ApplicationRecord
     has_many :members , through: :project_members
     has_many :project_message , dependent: :destroy
     has_many :messages , through: :project_message
-    
+    validates :name , presence: true
+    validates :deadline , presence: true
+    validates :members , presence: true
+
+
+
+
 def future?()
     projects = [:future , :ongoing , :completed]
     projects[project_type] == :future

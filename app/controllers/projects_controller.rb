@@ -17,7 +17,8 @@ class ProjectsController < ApplicationController
         if projects.save
             redirect_to account_path
         else
-            redirect_to root_path
+            flash[:notice] = "Please enter a valid project"
+            redirect_to new_project_path
         
         end
         
