@@ -1,12 +1,10 @@
-// CSS FOR PROJECT_CARD ENDS HERE
-
-
+// CSS FOR PROJECT_CARD STARTS HERE
 
 .project_card{
-    padding: 10px;
-    border:2px solid black;
+    border:1px solid black;
     border-radius: 2px;
-    
+    padding:20px;
+    margin: 10px 0px;
 }
 
 .project_card .wrapper{
@@ -15,25 +13,19 @@
     justify-content:space-between;
 }
 
-.project_card .wrapper .main{
-    
+.project_main a{
+    font-size: 24px;
+    font-weight: 700;
+
 }
 
-.project_card .wrapper .main .title{
+.checkbox.participant{
+    font-size: 12px;
+    margin:3px;
+    margin-left: 0;
+
     font-weight: 300;
-    
 }
-
-.project_card .wrapper .participant{
-    
-}
-
-.project_card .wrapper .options{
-    
-}
-
-
-
 // CSS FOR PROJECT_CARD ENDS HERE
 
 

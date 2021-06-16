@@ -1,23 +1,24 @@
 <div class="project_card">
     <div class="wrapper">
         <div class="main">
-            <%=link_to obj.name , project_path(obj) %>
+            <div class="project_main">
+                <%=link_to obj.name , project_path(obj) %>
+            </div>
 
-            <div class="participant">
+            <div class="participants">
+                
                 <% obj.members.each do |member| %>
-                <%=member.name%>
+                <div class="checkbox participant">
+                    <%=member.name%>
+
+                </div>
                 <%end%>
             </div>
         </div>
         <div class="options">
             
             <%=link_to project_path(obj) , method: :delete do%>
-
             <div class="option"><i class="bi bi-trash-fill"></i></div>
-            <%end%>
-            <% if obj.future?%>
-            
-            <div class="option">Start</div>
             <%end%>
         </div>
     </div>

@@ -23,30 +23,31 @@
         <div class="add_project_button">
         <%=link_to "Add project" , new_project_path %>
          </div>
+         <h3 id="project_type">
+            Future Projects
+         </h1>
          <div class="projects">
-
-            <div class="splide">
+            <div class="splide" data-splide='{"height":"80vh" , "perpage":"1"}'>
                 <div class="splide__track">
                     <ul class="splide__list">
                          
                         <li class="splide__slide">
-                            <%@project.each do |project| %>
+                                <%@project.each do |project| %>
              
-                            <% if project.completed? %>
-
-                               <%= render("shared/project_card" , obj:project)%>
-                            <%end%>
-
-                               <%end%>
+                                <% if project.completed? %>
+    
+                                   <%= render("shared/project_card" , obj:project)%>
+                                <%end%>
+    
+                                   <%end%>
+                          
                         </li>
                         <li class="splide__slide">
                             <%@project.each do |project| %>
              
                             <% if project.ongoing? %>
 
-                            <%=link_to project_path(project) do%>
                                <%= render("shared/project_card" , obj:project)%>
-                               <%end%>
                             <%end%>
 
                                <%end%>
@@ -57,9 +58,7 @@
              
                             <% if project.future? %>
 
-                            <%=link_to project_path(project) do%>
                                <%= render("shared/project_card" , obj:project)%>
-                               <%end%>
                             <%end%>
 
                                <%end%>
